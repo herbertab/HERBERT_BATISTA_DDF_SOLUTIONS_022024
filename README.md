@@ -161,8 +161,19 @@ LIMIT 10
 
 
 
+## Item  5 - Sobre Data Apps
 
+O projeto do Data App no módulo Inteligência pode ser acessado no [link](https://app-intelligence-treinamentos.dadosfera.ai/pipeline?project_uuid=6640cc65-0638-4ae2-bc5e-b1074c786670&pipeline_uuid=29050f4d-44a7-46e7-bf25-ec07deac3919&)  
 
+Foram desenvolvidas duas página. A primeira mostra um dropbox para seleção de um produto e a seguir lista os produtos mais similares utilizando a similaridade de cosseno.  
+
+Na parte lateral foram inseridos três sliders que alteram os parâmetros window, vector_size e min_count do modelo word2vec.  
+
+![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/1bcd4448-044d-4464-9c8b-0aab203820da)  
+
+A segunda página mostra os dez produtos mais similares ao produto selecionado utilizando a distância de Jaccard.
+
+![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/7502fe5e-7a1e-4cf6-a26d-34c34fe103bb)
 
 
 
