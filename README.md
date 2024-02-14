@@ -176,10 +176,46 @@ A segunda página mostra os dez produtos mais similares ao produto selecionado u
 ![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/7502fe5e-7a1e-4cf6-a26d-34c34fe103bb)
 
 
+## Item Bonus - Sobre GenAI + Data Apps
 
+O projeto do Data App no Módulo de Inteligência pode ser acessado no [link](https://app-intelligence-treinamentos.dadosfera.ai/pipeline?project_uuid=6640cc65-0638-4ae2-bc5e-b1074c786670&pipeline_uuid=29050f4d-44a7-46e7-bf25-ec07deac3919)
 
+Foi incluída uma página no projeto com o nome Presentation. Nesta página o usuário pode escolher um produto na lista de produtos e clicar no botão Gerar a Apresentação, conforme a imagem.  
 
+![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/98c28af4-26e3-422d-9ed4-846d0745f70e)  
 
+Após a geração da apresentação em pptx, aparecerá um botão que permite realizar o download da apresentação.  
+
+![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/d5d0afc3-1808-4c10-9b48-cbb3ccc578cb)  
+
+Na apresentação em pptx gerada é inserida uma imagem do produto gerada pelo modelo dall-e-2 da OpenAI. A imagem é gerada utilizando o seguinte prompt, no qual a variável selected_product representa o nome do produto gerado pelo GPT-3 nas atividades anteriores.
+
+```
+# Gerar a imagem do produto selecionado
+        prompt = f"An image of the product: {selected_product}. Only the product in a white background. Nothing else."
+        out_img_path = "generated_image.jpg"
+        generate_image(prompt, out_img_path)
+```
+
+Os textos da apresentação são gerados pelo modelo gpt-3.5-turbo-0125 da OpenAI e são obtidos a partir dos seguintes prompts.  
+
+```
+prompt_system = """
+            You are a skilled Power Point presentation creator. You will be provided with a description of a product and must provide the following information in JSON format. 
+            STEP 1 - A Title for the power point presentation with a maximum of 50 characters. The title must not have Presentation in it. 
+            STEP 2 - A text of up to 300 characters that describes the main characteristics of this product. 
+            STEP 3 - Another text of up to 500 characters that describes potential customers, price and advantages in relation to competitors for the product.
+            Please observe:
+            The outputs must be named as Title, Features and Customer, respectively.
+            No other answer should be delivered.
+        """
+
+prompt_user = f"Product Description: {target_product['text'].values[0]}"
+```  
+
+Segue um print de exemplo de apresentação gerada pelo app para o produto Warrior Maiden Costume.  
+
+![image](https://github.com/herbertab/HERBERT_BATISTA_DDF_SOLUTIONS_022024/assets/17315911/22f6c680-aa69-4006-9898-ccc1243cc22c)
 
 
 
